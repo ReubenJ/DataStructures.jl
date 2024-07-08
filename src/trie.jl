@@ -10,6 +10,10 @@ mutable struct Trie{K,V}
         return self
     end
 
+    function Trie{V}() where V
+        return Trie{Char,V}()
+    end
+
     function Trie{K,V}(ks, vs) where {K,V}
         return Trie{K,V}(zip(ks, vs))
     end
